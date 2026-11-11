@@ -20,6 +20,10 @@
 #include "TouchHandler.h"
 #endif
 
+#ifdef GEEKMAGIC_S3
+#include "geekmagic/gm.h"
+#endif
+
 #include <soc/soc_caps.h>
 //#define HW_SHA256_TEST
 
@@ -188,6 +192,11 @@ void setup()
 
   /******** MONITOR SETUP *****/
   setup_monitor();
+
+#ifdef GEEKMAGIC_S3
+  /******** GEEKMAGIC S3: weather + web config UI *****/
+  gm_begin();
+#endif
 }
 
 void app_error_fault_handler(void *arg) {
@@ -216,5 +225,10 @@ void loop() {
 #endif
   wifiManagerProcess(); // avoid delays() in loop when non-blocking and other long running code
 
+#ifdef GEEKMAGIC_S3
+  gm_loop();
+  vTaskDelay(20 / portTICK_PERIOD_MS);
+#else
   vTaskDelay(50 / portTICK_PERIOD_MS);
+#endif
 }

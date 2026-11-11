@@ -161,6 +161,9 @@
 #ifdef ESP32_CAM
 #include <User_Setups/Setup212_ESP32Cam_DongleDisplay.h>      // For the LilyGo T-Dongle S3 based ESP32 with ST7735 80 x 160 TFT
 #endif
+#ifdef GEEKMAGIC_S3
+#include <User_Setups/Setup_GeekMagic_S3.h>            // GeekMagic S3: ESP32-S3 with ST7789 240 x 240 TFT
+#endif
 #ifdef NERDMINER_S3_GEEK
 #include <User_Setups/Setup303_WaveShare ESP32S3_GEEK.h>            // Setup file for Waveshare Setup303_WaveShare ESP32S3_GEEK with ST7789 135*240 TFT
 #endif

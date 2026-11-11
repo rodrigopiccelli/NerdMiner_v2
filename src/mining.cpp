@@ -1126,7 +1126,11 @@ void minerWorkerHw(void * task_id)
 #endif  //HARDWARE_SHA265
 
 
+#ifdef GEEKMAGIC_S3
+#define DELAY 20   // faster animate tick so weather-screen GIFs play at their real speed
+#else
 #define DELAY 100
+#endif
 #define REDRAW_EVERY 10
 
 void restoreStat() {

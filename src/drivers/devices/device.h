@@ -55,6 +55,8 @@
 #include "lilygoT_HMI.h"
 #elif defined(SPOTPEAR)
 #include "spotpearKeychain.h"
+#elif defined(GEEKMAGIC_S3)
+#include "geekMagicS3.h"
 #elif defined(LILYGO_T3_V1)
 #include "lilygoT3V1.h"
 
